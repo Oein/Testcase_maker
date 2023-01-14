@@ -1,0 +1,14 @@
+{
+  "name": "COGO_PROBLEM_MAKING",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "fs-extra": "^11.1.0",
+    "typescript": "^4.9.4"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.1",
+    "@types/node": "^18.11.18"
+  }
+}

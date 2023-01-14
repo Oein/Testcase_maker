@@ -1,0 +1,12 @@
+랜덤 넘버 : {RandInt,[Min],[Max]}
+// 최소값, 최대값
+랜덤 소수 : {RandDou,[Min],[Max],[DotAfter]}
+// 숫자 최소값, 숫자 최대값, 점 뒤에 있는 숫자 수
+랜덤 문자열 : {RandStr,[MinLength],[MaxLength],[Useable chars]}
+// 최소 길이, 최대 길이, 사용가능 문자
+
+{RandInt,1,1000}
+
+{RandDou,1,1000,2}
+
+{RandStr,10,10,abcdefghijklmnopqrstuvwxyz}
