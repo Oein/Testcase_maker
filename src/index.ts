@@ -47,6 +47,10 @@ function randStr(length: number, characters: string) {
   return result;
 }
 
+function randWor(words: string[]) {
+  return words[Math.floor(Math.random() * words.length)];
+}
+
 function getRandomTestcases() {
   let out = inputTemplate.toString();
   while (out.includes("{")) {
@@ -85,6 +89,9 @@ function getRandomTestcases() {
             splitByCom[3]
           )
         );
+        break;
+      case "RandWor":
+        out = out.replace(randomRequestRaw, randWor(splitByCom.slice(1)));
         break;
       default:
         console.log(`Cannot find ${splitByCom[0]}`, randomRequestRaw);
