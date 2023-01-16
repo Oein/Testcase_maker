@@ -141,7 +141,7 @@ async function main() {
   await build();
   console.log("Build Done!");
 
-  for (let i = 1; i <= 1; i++) {
+  for (let i = 1; i <= 100; i++) {
     console.log(`Making testcase... (${i} / 100)`);
     await makeTC(i);
   }
