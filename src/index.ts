@@ -53,9 +53,16 @@ function randWor(words: string[]) {
 
 function getRandomTestcases() {
   let out = inputTemplate.toString();
+  let findSt = 0;
   while (out.includes("{")) {
-    let nextOpener = out.indexOf("{");
-    let nextCloser = out.indexOf("}");
+    let nextOpener = out.indexOf("{", findSt);
+    let nextnextOpener = out.indexOf("{", findSt + 1);
+    let nextCloser = out.indexOf("}", findSt);
+
+    if (nextnextOpener != -1 && nextnextOpener < nextCloser) {
+      findSt++;
+      continue;
+    }
 
     let randomRequestRaw = out.slice(nextOpener, nextCloser + 1).toString();
     let randomRequest = randomRequestRaw.replace("{", "").replace("}", "");
@@ -97,6 +104,8 @@ function getRandomTestcases() {
         console.log(`Cannot find ${splitByCom[0]}`, randomRequestRaw);
         process.exit(1);
     }
+
+    findSt = 0;
   }
 
   return out;
@@ -132,7 +141,7 @@ async function main() {
   await build();
   console.log("Build Done!");
 
-  for (let i = 1; i <= 100; i++) {
+  for (let i = 1; i <= 1; i++) {
     console.log(`Making testcase... (${i} / 100)`);
     await makeTC(i);
   }

@@ -1,1 +1,1 @@
-{RandInt,1,50}
+{RandWor,{RandInt,1,10}{RandStr,1,10,abcdefg},{RandInt,1,10}{RandStr,1,10,abcdefg}}

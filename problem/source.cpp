@@ -13,29 +13,19 @@ using namespace std;
 
 int main()
 {
-    int N;
-    cin >> N;
-    for (int i = 1; i < N; i++)
+    string x;
+    getline(cin, x);
+    for (int i = 0; i < x.size(); i++)
     {
-        for (int j = 0; j < i; j++)
+        char g = x[i];
+        if (g >= 'a' && g <= 'z')
         {
-            if (i >= 10)
-                cout << i % 10;
-            else
-                cout << i;
+            g -= 32;
         }
-        cout << "\n";
-    }
-    for (int i = N; i > 0; i--)
-    {
-        for (int j = 0; j < i; j++)
+        else if (g >= 'A' && g <= 'Z')
         {
-            if (i >= 10)
-                cout << i % 10;
-            else
-                cout << i;
+            g += 32;
         }
-        cout << "\n";
     }
-    return 0;
+    cout << x;
 }

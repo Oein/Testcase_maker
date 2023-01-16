@@ -10,5 +10,8 @@
   "devDependencies": {
     "@types/fs-extra": "^11.0.1",
     "@types/node": "^18.11.18"
+  },
+  "scripts": {
+    "start": "tsc; node dist/index.js"
   }
 }
