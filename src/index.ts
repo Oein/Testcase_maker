@@ -146,9 +146,11 @@ async function main() {
     await makeTC(i);
   }
   console.log("Zipping...");
-  execSync(
-    `cd ${testcasesPath} && zip -r ${p_join(problemRoot, "testcases.zip")} ./*`
-  );
+  let zipFilePath = p_join(problemRoot, "testcases.zip");
+  execSync(`cd ${testcasesPath} && zip -r ${zipFilePath} ./*`);
+  let base64ed = fs.readFileSync(zipFilePath, "base64").toString();
+  let base64edPath = p_join(problemRoot, "testcases.base64.txt");
+  fs.writeFileSync(base64edPath, base64ed);
 }
 
 main();
